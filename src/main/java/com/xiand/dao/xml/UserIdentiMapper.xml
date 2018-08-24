@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xiand.dao.mapper.UserIdentiMapper">
+    <select id="selectMeber" resultType="memberInfo">
+        select *from DataTest.dbo.MeberInfo where username=#{arg0} and password=#{arg1}
+    </select>
+</mapper>

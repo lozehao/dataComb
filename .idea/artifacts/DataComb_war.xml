@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DataComb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="DataComb.war">
+      <element id="artifact" artifact-name="DataComb:war exploded" />
+    </root>
+  </artifact>
+</component>

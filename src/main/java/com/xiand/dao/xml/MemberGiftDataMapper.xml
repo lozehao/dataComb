@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xiand.dao.mapper.MemberGiftDataMapper">
+    <select id="seeGiftLogResource" resultType="memberGiftLog">
+        SELECT top 100 *from [Gooben_Test].[dbo].[MemberGiftLog];
+    </select>
+    <select id="queryGiftLogData" parameterType="memberGiftLog" resultType="memberGiftLog">
+        SELECT 
+          top 100 
+        *from 
+          [Gooben_Test].[dbo].[MemberGiftLog]
+        <trim prefix="WHERE" prefixOverrides="AND |OR">
+            <if test="GLID !=null">
+                GLID=#{GLID}
+            </if>
+            <if test="MID !=null">
+                and MID=#{MID}
+            </if>
+            <if test="MName !=null">
+                and MName=#{MName}
+            </if>
+            <if test="RID !=null">
+                and RID=#{RID}
+            </if>
+            <if test="RetailName !=null">
+                and RetailName=#{RetailName}
+            </if><if test="RetailMobile !=null">
+                and RetailMobile=#{RetailMobile}
+            </if><if test="AID !=null">
+                and AID=#{AID}
+            </if><if test="AgentName !=null">
+                and AgentName=#{AgentName}
+            </if><if test="ServiceCheckID !=null">
+                and ServiceCheckID=#{ServiceCheckID}
+            </if>
+        </trim>
+    </select>
+</mapper>

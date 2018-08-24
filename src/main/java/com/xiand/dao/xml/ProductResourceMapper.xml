@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.xiand.dao.mapper.ProductResourceMapper">
+    <resultMap id="productListMap" type="productBean">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="content" property="content"/>
+    </resultMap>
+    <select id="seeProductResource" resultMap="productListMap">
+        select *from xdgroup.dbo.productList;
+    </select>
+
+    <insert id="addProductResource">
+        INSERT into xdgroup.dbo.productList(title,content) VALUES (#{title},#{content})
+    </insert>
+</mapper>
